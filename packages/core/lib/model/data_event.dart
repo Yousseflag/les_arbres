@@ -4,10 +4,10 @@ sealed class DataEvent<T> {
     const DataEvent({this.data, this.error});
 }
 
-class Success<T> extends DataEvent {
+class Success<T> extends DataEvent<T> {
     const Success(T data): super(data: data);
 }
 
-class Failure<T> extends DataEvent {
+class Failure<T> extends DataEvent<T> {
     const Failure(Exception error, T? data): super(error: error, data: data);
 }

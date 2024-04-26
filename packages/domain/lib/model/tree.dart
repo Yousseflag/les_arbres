@@ -16,14 +16,3 @@ class Tree {
     this.address
   });
 }
-
-class TreeModel {
-  // frensh name
-  String? name;
-  String? espece;
-  // meter value
-  String? hauteur;
-  // centimeter value
-  String? circonfe;
-  String? address;
-}
