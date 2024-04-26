@@ -1,6 +1,10 @@
+import 'package:data/di/data_injections.dart' as data_di;
+import 'package:domain/di/domain_injections.dart' as domain_di;
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await data_di.init();
+  await domain_di.init();
   runApp(const MyApp());
 }
 
