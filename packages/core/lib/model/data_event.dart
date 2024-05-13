@@ -1,13 +1,14 @@
 sealed class DataEvent<T> {
-    final T? data;
-    final Exception? error;
-    const DataEvent({this.data, this.error});
+    const DataEvent();
 }
 
 class Success<T> extends DataEvent<T> {
-    const Success(T data): super(data: data);
+  final T data;
+  const Success(this.data);
 }
 
 class Failure<T> extends DataEvent<T> {
-    const Failure(Exception error, T? data): super(error: error, data: data);
+  final T? data;
+  final Exception error;
+  const Failure(this.error, this.data);
 }

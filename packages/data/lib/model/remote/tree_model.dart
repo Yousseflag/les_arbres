@@ -2,8 +2,9 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'tree_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class TreeModel {
+  
   TreeModel(
     this.name,
     this.espece,
@@ -18,17 +19,18 @@ class TreeModel {
   String? espece;
 
   @JsonKey(name: "hauteurenm")
-  String? hauteur;
+  int? hauteur;
 
   @JsonKey(name: "circonferenceencm")
-  String? circonfe;
+  int? circonfe;
   
   @JsonKey(name: "adresse")
   String? address;
   
   @JsonKey(name: "complementadresse")
   String? complementOfAddress;
-  
+
+  String? arrondissement;  
 
   Map<String, dynamic> toJson() => _$TreeModelToJson(this);
   

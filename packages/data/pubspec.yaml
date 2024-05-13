@@ -20,8 +20,6 @@ dependencies:
     path: ../core
   
   dio: ^5.4.3
-  get_it: ^7.6.0
-
 
 dev_dependencies:
   flutter_test:

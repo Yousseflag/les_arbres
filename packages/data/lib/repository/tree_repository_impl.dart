@@ -5,11 +5,11 @@ import 'package:domain/repository/tree_repository.dart';
 
 final class TreeRepositoryImpl implements TreeRepository {
 
-  final TreeRemoteDataSource treeRemoteDataSource;
+  late final TreeRemoteDataSource _treeRemoteDataSource;
 
-  TreeRepositoryImpl({ required this.treeRemoteDataSource});
+  TreeRepositoryImpl(this._treeRemoteDataSource);
 
   @override
-  Future<DataEvent<List<Tree>>> getTrees() async  => treeRemoteDataSource.getTrees();
+  Future<DataEvent<Trees>> getTrees(int limits) async  => _treeRemoteDataSource.getTrees(limits);
 
 }

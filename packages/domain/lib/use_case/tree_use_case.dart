@@ -3,13 +3,12 @@ import 'package:core/use_case/base_use_case.dart';
 import 'package:domain/model/tree.dart';
 import 'package:domain/repository/tree_repository.dart';
 
-final class TreetUseCase implements BaseUseCase<DataEvent<List<Tree>> , void> {
+class TreetUseCase implements BaseUseCase<DataEvent<Trees> , int> {
 
-  final TreeRepository treeRepository;
+  late final TreeRepository _treeRepository;
 
-  TreetUseCase({required this.treeRepository});
+  TreetUseCase(this._treeRepository);
   
   @override
-  Future<DataEvent<List<Tree>>> call(void params) async => treeRepository.getTrees();
-  
+  Future<DataEvent<Trees>> call(int params) async => _treeRepository.getTrees(params);
 }
