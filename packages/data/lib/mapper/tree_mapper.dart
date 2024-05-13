@@ -1,3 +1,4 @@
+import 'package:core/extension/string_extensions.dart';
 import 'package:core/mapper/mapper.dart';
 import 'package:data/model/remote/tree_model.dart';
 import 'package:domain/model/tree.dart';
@@ -10,7 +11,7 @@ final class TreeMapper implements Mapper<TreeModel, Tree> {
       espece: type.espece,
       hauteur: type.hauteur,
       circonfe: type.circonfe,
-      address: type.address
+      address: StringExtensions.joinParams([type.complementOfAddress, type.address, type.arrondissement])
     );
 
   @override

@@ -1,11 +1,13 @@
+typedef Trees = List<Tree>;
+
 class Tree {
   // frensh name
   String? name;
   String? espece;
   // meter value
-  String? hauteur;
+  int? hauteur;
   // centimeter value
-  String? circonfe;
+  int? circonfe;
   String? address;
 
   Tree({
@@ -15,4 +17,6 @@ class Tree {
     this.circonfe,
     this.address
   });
+
+  static const emptyList = <Tree>[];
 }
